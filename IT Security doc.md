@@ -17,6 +17,8 @@ Authenticity is about one party (say, Alice) interacting with another (Bob) to c
 Non-repudiation is about Alice showing to Bob a proof that some data really comes from Alice, such that not only Bob is convinced, but Bob also gets the assurance that he could show the same proof to Charlie, and Charlie would be convinced, too, even if Charlie does not trust Bob.</p>
     </ul>
     </li>
+    
+    <!--Lec2-->
     <li>Cryptography
     <ul>
         <li>Model of a cryptographic system</li>
@@ -28,11 +30,13 @@ Non-repudiation is about Alice showing to Bob a proof that some data really come
         <li>Conditions must be met to conduct brute force attack</li>
         <p>Length of cipher must longer than key and key must be finite number of bit</p>
         <li>what is One time pad? and why it is unbreakable if the encryption key is unknow</li>
-        <p>use randomness to generate key, and encrypt the message with that random key, so it is uniform distribution</p>
+        <p>Use randomness to generate key, and encrypt the message with that random key, so it is uniform distribution</p>
         <li>How Electonic Code Book (ECB) work. Its adv and disadv? When this method can be use </li>
         <li>How Cipher Block Chaining,Cipher Feedback Mode, Output Feedback Mode, Counter Mode work? </li>
     </ul>
     </li>
+    
+    <!--Lec3-->
     <li>Authentication
     <ul>
         <li>Term of "Authentication" and "Authencity". Factors for it? What is two-factor-authentication</li>
@@ -52,6 +56,8 @@ What you know (Password), What you have (Token), What you are (Biometry)
         <li>Discuss advantages and disadvantages of using cerfiticates and CAs.</li>
     </ul>
     </li>
+    
+    <!--Lec4-->
     <li>Operating System Security (this lesson exercise file hasn't covered all the topic in the lecture)
     <ul>
         <li>Main tasks of an Operating System and how do they relate to security</li>
@@ -64,12 +70,16 @@ What you know (Password), What you have (Token), What you are (Biometry)
         <li>`setfacl` `geftacl` do and explain their practical use in a self-chosen example. What chances do the use of ACLs imply for the commands ls, cp and mv?</li>
     </ul>
     </li>
+    <!--Lec5-->
     <li>Applications (this lecture dont have exercise)
     <ul>
         <li>Buffer overflow?</li>
         <li>Race conditions?</li>
         <li>Active content?</li>
     </ul>
+    </li>
+    
+    <!--Lec8-->
     <li>Network security
     <ul>
         <li>Depict potential threats when communicating over a network.</li>
@@ -84,6 +94,7 @@ What you know (Password), What you have (Token), What you are (Biometry)
         <li>Avantages and disadvantages of security mechanisms and protocols on all layers ofthe network reference model and compare them. Also, give examples for their use.</li>
     </ul>
     </li>
+    <!--Lec9-->
     <li>Firewalls
     <ul>
         <li>Firewalls ? Packet filter ? application level gateway ?demilitarized zone? tunnel</li>
@@ -94,6 +105,7 @@ What you know (Password), What you have (Token), What you are (Biometry)
         <li>Describe how a dynamic packet filter distinguishes between incoming and outgoing TCP-connections. Denote the corresopnding rules in pseudonotation or verbally.</li>
     </ul>
     </li>
+    <!--Lec10-->
     <li>Virtual Private Networks
     <ul>
         <li>VPN? RAS? Site-to-site VPN?</li>
