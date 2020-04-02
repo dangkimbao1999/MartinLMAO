@@ -8,13 +8,13 @@
 
 
    * **What is the term of security?**
-        * **What is the aim of security? Example**
-            * **What are passive and active attack?Why those need to be distinct**
-            * **Explain security processes and its phases**
-            * **Difference between nonrepudiation and authenticity**
-              * Authentication verifies who you are (User-ID) while Non-Repudiation verifies what you did (e.g Sending a message).
-              * Authenticity is about one party (say, Alice) interacting with another (Bob) to convince Bob that some data really comes from Alice.
-              * Non-repudiation is about Alice showing to Bob a proof that some data really comes from Alice, such that not only Bob is convinced, but Bob also gets the assurance that he could show the same proof to Charlie, and Charlie would be convinced, too, even if Charlie does not trust Bob.
+* **What is the aim of security? Example**
+* **What are passive and active attack?Why those need to be distinct**
+* **Explain security processes and its phases**
+* **Difference between nonrepudiation and authenticity**
+  * Authentication verifies who you are (User-ID) while Non-Repudiation verifies what you did (e.g Sending a message).
+  * Authenticity is about one party (say, Alice) interacting with another (Bob) to convince Bob that some data really comes from Alice.
+  * Non-repudiation is about Alice showing to Bob a proof that some data really comes from Alice, such that not only Bob is convinced, but Bob also gets the assurance that he could show the same proof to Charlie, and Charlie would be convinced, too, even if Charlie does not trust Bob.
 
 # Lec2
 ## Cryptography
