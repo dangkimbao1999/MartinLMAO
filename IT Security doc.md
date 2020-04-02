@@ -10,6 +10,13 @@
         <li>What are passive and active attack?Why those need to be distinct</li>
         <li>Explain security processes and its phases</li>
         <li>Difference between nonrepudiation and authenticity</li>
+        <p>Authentication verifies who you are (User-ID) while Non-Repudiation verifies what you did (e.g Sending a message).
+
+Authenticity is about one party (say, Alice) interacting with another (Bob) to convince Bob that some data really comes from Alice.
+
+Non-repudiation is about Alice showing to Bob a proof that some data really comes from Alice, such that not only Bob is convinced, but Bob also gets the assurance that he could show the same proof to Charlie, and Charlie would be convinced, too, even if Charlie does not trust Bob.
+            
+        </p>
     </ul>
     <li>Cryptography</li>
     <ul>
@@ -69,10 +76,10 @@
     </ul>
     <li>Firewalls</li>
     <ul>
-        <li>Firewalls? Packet filter? application level gateway? demilitarized zone? tunnel</li>
+        <li>Firewalls ? Packet filter ? application level gateway ?demilitarized zone? tunnel</li>
         <li>HOw packet filter works</li>
         <li>Network Address Translation is and how it works.</li>
-        <li>inherent weaknesses and vulnerabilities in the concept “Firewall”</li>
+        <li>inherent weaknesses and vulnerabilities in the concept Firewalls</li>
         <li>Describe how a static packet filter distinguishes between incoming and outgoing TCPconnections. Denote the corresopnding rules in pseudonotation or verbally.</li>
         <li>Describe how a dynamic packet filter distinguishes between incoming and outgoing TCP-connections. Denote the corresopnding rules in pseudonotation or verbally.</li>
     </ul>
@@ -96,4 +103,3 @@ Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequ
         <li>Simple Anonymization</li>
     </ul>
 </ol>
-
