@@ -30,25 +30,25 @@
         <li>Name and explain on which points the security of password-based authentication schemes depends.</li>
         <li>How secure password should be chosen?</li>
         <li>Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.</li>
-        <li>Describe the terms “Token”, “Smart Card” and “Biometry” and explain their use for authentication</li>
+        <li>Describe the terms �Token, �Smart Card and �Biometry and explain their use for authentication</li>
         <li>Describe Cryptographic Hash Functions</li>
         <li>Describe how public key or symmetric cryptography can be used for authentication.</li>
         <li>Describe what a digital signature is and how it operates. Also describe how hash functions are used in digital signatures.</li>
-        <li>Explain in detail format, composition and use of certificates. Also describe “Certificate Authorities”, “Root-CA” and “Certificate revocation”.</li>
+        <li>Explain in detail format, composition and use of certificates. Also describe �Certificate Authorities, �Root-CA and �Certificate revocation.</li>
         <li>Discuss advantages and disadvantages of using cerfiticates and CAs.</li>
     </ul>
-    <li>Operating System Security*bài này chắc liệt kê chưa đủ do exercise còn thiếu vài chủ đề trong slide*</li>
+    <li>Operating System Security (this lesson exercise file hasn't covered all the topic in the lecture)</li>
     <ul>
         <li>Main tasks of an Operating System and how do they relate to security</li>
         <li>Explain how the access control mechanisms implemented by an Operating System can be circumventde by an attacker and in which cases it can be enforced</li>
-        <li>Explain Linux’s access control mechanism in detail</li>
+        <li>Explain Linux's access control mechanism in detail</li>
         <li>Explain each of the field in ls-l command's return</li>
         <li>Which permissions are sufficient to execute a file containing a binary? Which permissions are sufficient to execute a shell script?</li>
         <li>Which permissions are needed to copy a file?</li>
         <li>Which permissions are necessary to move a file?</li>
         <li>`setfacl` `geftacl` do and explain their practical use in a self-chosen example. What chances do the use of ACLs imply for the commands ls, cp and mv?</li>
     </ul>
-    <li>Applications (bài này ko có exercise)</li>
+    <li>Applications (this lecture dont have exercise)</li>
     <ul>
         <li>Buffer overflow?</li>
         <li>Race conditions?</li>
@@ -83,7 +83,7 @@
 Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.</li>
         <li>Explain and describe how OpenVPN works in detail. In your explanation, the terms tundevice and tap-device should be addressed.</li>
     </ul>
-    <li>Network Applications (bài này ko có file exercise)</li>
+    <li>Network Applications (this lecture dont have file exercise)</li>
     <ul>
         <li>How emails work?</li>
         <li>POP-Auth?</li>
