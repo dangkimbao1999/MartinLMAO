@@ -8,9 +8,29 @@
 
 
    * **What is the term of security?**
+           * Protection of information and information systems against `unauthorized access` and `modification` and `availability` of information system services for `legitimate users`, including measures to thwart, discover or log threats. Protection against unauthorized access must be ensured during `storage`,` processing` or `in transit`
 * **What is the aim of security? Example**
+    * Confidentiality: Against unauthorized access
+    * Integrity: Against unauthorized modification
+    * Availability: Resources and services are available for legit users
+    * Authenticity and authentication:  Explicit identification of the sender of info or a communication peer
 * **What are passive and active attack?Why those need to be distinct**
-* **Explain security processes and its phases**
+     * Passive
+          * Attacker doesn't actively participate
+          * Difficult to discover
+          * Preventive means of protection against active attacks (?)
+     * Active
+          * Attacker actively participate
+          * Manipulate data or systems
+          * Attacker often leaves traces
+          * Prevention and Detection is possible
+     * Why distinct these 2 type of attack? **not sure**
+          * Because each of these attack focus on different basis, perform diff task, cause different type of damage and and focus on different IT-Security aim. => need to differentiate to have suitable method to prevent those attack
+* **Explain security processes and its phases** (not sure)
+     * Plan: Establish `objectives and processes` required to deliver the `desired results`.
+     * Do: The do phase allows the `plan` from the previous step `to be done`. `Small changes` are usually `tested`, and data is gathered to see `how effective` the change is.
+     * Check: During the check phase, the `data and results` gathered from the do phase are `evaluated`. Data are `compared to the expected outcomes` to see any  similarities and differences. The testing process is also evaluated to see `if there were any changes from the original` test created during the planning phase. To see `what changes work better` than others, and if said changes  can be `improved` as well.
+     * Act: This act phase is where a `process is improved`.  Records from the "do" and "check" phases help `identify issues` with the  process. These issues may include problems, non-conformities,  opportunities for improvement, inefficiencies and other issues that result in outcomes that are evidently less-than-optimal. Root `causes of  such issues are investigated`, `found and eliminated` by modifying the  process. Risk is `re-evaluated`. At the end of the actions in this phase,  the `process has better instructions, standards or goals`. `Planning for  the next cycle` can proceed with a `better base-line`. Work in the `next do phase` should `not create recurrence` of the identified issues; if it does, then the action was not effective.
 * **Difference between nonrepudiation and authenticity**
   * Authentication verifies who you are (User-ID) while Non-Repudiation verifies what you did (e.g Sending a message).
   * Authenticity is about one party (say, Alice) interacting with another (Bob) to convince Bob that some data really comes from Alice.
