@@ -40,49 +40,94 @@
 ## Cryptography
 
    * **Model of a cryptographic system**
+      * ![image-20200403150608571](C:\Users\dangk\AppData\Roaming\Typora\typora-user-images\image-20200403150608571.png)
 * **Classical encryption methods?**
-* **What are Encryption schemes?**
-
-   * **Differences between public key and symmetric encryption schemes and their respective adv and disadvantage**
+   * Substitution
+   * Transposition
+   * Product cipher
+   * Applying multiple substitutions and/or transpositions possible  
+* **Differences between public key and symmetric encryption schemes and their respective adv and disadvantage**
+   * Symmetric encryption schemes: key is identical for both sender and receiver 
+      * Advantage: 
+      * Disadvantage:
+   * Public key: different pair of key for every direction of communication
+      * Advantage:
+      * Disadvantage:
 * **Term of Hybrid encryption scheme and its sequence thereof**
-* **Term of "Mode of operation". Outline enrypt and decrypt for at least 2 different modes**
+   * It's like the mix of symmetric and public key schemes: say sender S want to send R a message, S will send R a public key, then R will use that key to create a session key, then R will use S's sent public key to encrypt another key and send back to S to join the created session key. And in that session, symmetric encryption is used **not sure**
+* **Term of "Mode of operation". Outline encrypt and decrypt for at least 2 different modes**
+   * Mode of operation is  an algorithm used in conjunction with a block cipher that makes up the complete encryption algorithm
+   * Used in CBC, CFM
 * **Conditions must be met to conduct brute force attack**
   * Length of cipher must longer than key and key must be finite number of bit
 * **What is One time pad? and why it is unbreakable if the encryption key is unknow**
   * Use randomness to generate key, and encrypt the message with that random key, so it is uniform distribution
-* **How Electonic Code Book (ECB) work. Its adv and disadv? When this method can be use **
+* **How Electronic Code Book (ECB) work. Its adv and disadvantage? When this method can be use **
+   * Disadvantage: Blocks of plaintext go through the same encrypt processes, so the attacker might guess the plaintext if 1 plaintext is sent over and over again. The attacker can also mess up the block order => make the message incorrect
 * **How Cipher Block Chaining,Cipher Feedback Mode, Output Feedback Mode, Counter Mode work? **
 
 # Lec3
 ## Authentication
 
-    * **Term of "Authentication" and "Authencity". Factors for it? What is two-factor-authentication**
-        	* Authencity: The quality of being genuine or not corrupted from the original. 
-	* Authentication: something which validates or confirms the authenticity of something 
-	* What you know (Password), What you have (Token), What you are (Biometry)
-	* 2-Factor-authentication: provide multiple proof of your identification to get the permission to access.
-   * **Name and explain on which points the security of password-based authentication schemes depends.**
-* **How secure password should be chosen?**
+* **Term of "Authentication" and "Authencity". Factors for it? What is two-factor-authentication**
+    	* Authencity: The quality of being genuine or not corrupted from the original. 
+    * Authentication: something which validates or confirms the authenticity of something 
+    * What you know (Password), What you have (Token), What you are (Biometry)
+    * 2-Factor-authentication: provide multiple proof of your identification to get the permission to access.
+* **Name and explain on which points the security of password-based authentication schemes depends.**
+     * Size of password domain, choice of password and password policies
+     * Security of strong passwords
+     * Security when entering/transmitting passwords.
+* **How secure password should be chosen?(Not sure)**
+     * Binary keys with 128bit.
 * **Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.**
+     * 
 * **Describe the terms Token, Smart Card and Biometry and explain their use for authentication**
+     * Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
+     * Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
+     * Biometry: physical properties of a person. To prove that you are really you.
 * **Describe Cryptographic Hash Functions**
   * Compute characteristic pattern (“fingerprint”) of fixed length for each message. Mostly 128 or 256 bits. It should be impossible to find a message producing a given hash value, to find two messages with the same hash value. Widely used algorithms: MD5 and SHA
 * **Describe how public key or symmetric cryptography can be used for authentication.**
+     * Symmetric key: ![image-20200424211818767](C:\Users\dangk\Desktop\image-20200424211818767.png)
+     * Public key: ![image-20200424211900083](C:\Users\dangk\Desktop\image-20200424211900083.png)
 * **Describe what a digital signature is and how it operates. Also describe how hash functions are used in digital signatures.**
+     * A process that guarantees that the contents of a message haven't been altered in transit. Sender signs message with private key. Public key is used for validation
+     * Hash function: transforming data of any size into a fixed size. Hash function will  generate unique digital fingerprint. Alice writes a message to Bob, A will hash the message, and then combines the hash value with her private key to generate a digital signature.
 * **Explain in detail format, composition and use of certificates. Also describe Certificate Authorities, Root-CA and Certificate revocation.**
+     * 
+     * 
 * **Discuss advantages and disadvantages of using cerfiticates and CAs.**
+     * 
 
 # Lec4
 ## Operating System Security (this lesson exercise file hasn't covered all the topic in the lecture)
 
    * **Main tasks of an Operating System and how do they relate to security**
+        * Hides complicated details from users and, applications which otherwise had to be dealt with, Provides „Virtual Machine“ which is much easier to use, Allocates resources to different users, processes
 * **Explain how the access control mechanisms implemented by an Operating System can be circumventde by an attacker and in which cases it can be enforced**
+  * Use admin privilege to access to other individual's information in the organization
 * **Explain Linux's access control mechanism in detail**
+  * 
 * **Explain each of the field in ls-l command's return**
+  * drwxr-xr-x 2 max staff 4096 Mar 27 12:15 test (split bởi dấu "-")
+
+  * d-: file type: directory (l for link)
+  * first 3: permission for the owner
+  * 3 after: for the group which the file belong to
+  * 3 after: for everyone
+  * number of link of directories inside this directory
+  * user name
+  * group name
 * **Which permissions are sufficient to execute a file containing a binary? Which permissions are sufficient to execute a shell script?**
+  * x
 * **Which permissions are needed to copy a file?**
+  * source: r, target: w x
 * **Which permissions are necessary to move a file?**
+  * source: w, target: w x
 * **`setfacl` `geftacl` do and explain their practical use in a self-chosen example. What chances do the use of ACLs imply for the commands ls, cp and mv?**
+  * `setfacl`: set ACL of files and directory  (ex: Gán quyền đọc , ghi, thi hành cho user bao và group friend: `setfacl -m user:bao:rwx,group:friends:rwx mydir` )
+  * `getfacl`: see information of the ACL of the file
 
 # Lec5
 ## Applications (this lecture dont have exercise)
@@ -123,11 +168,17 @@
    * **How IPSec works in detail. In your explanation, the terms AH, ESP, Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.**
 
         * **Explain and describe how OpenVPN works in detail. In your explanation, the terms tun device and tap-device should be addressed.**
-    ## Lec13
-    # Network Applications (this lecture dont have file exercise)
 
-   * **How emails work?**
+
+
+## Lec13
+
+# Network Applications (this lecture dont have file exercise)
+
+
+
 * **POP-Auth?**
+* **How emails work?**
 * **App layer encryption**
 * **SSH**
 * **Local PFW**
