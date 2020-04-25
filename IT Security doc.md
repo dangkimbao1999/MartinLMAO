@@ -139,7 +139,7 @@ Also javascript, ActiveX (Microsoft windows)
 
    * **Depict potential threats when communicating over a network.**
    
-   Depict potential threats when communicating over a network.
+Depict potential threats when communicating over a network.
 Unauthorized third party can:
 	* Intercept the traffic between the sender and the receiver, gains access
 	to the info between the two
@@ -183,7 +183,7 @@ IP Spoofing: Impersonate an IP address. A impersonates B's IP and send a message
 about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
      * **TCP Sequence Number Attack**
 	 
-	 TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
+TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
 SYN to server B, B then responds by sending a SYN ACK with sequence number = server to C.
 C for some reasons does not respond to B. A then guesses the server sequence number and +1 to it
 as ACK for the ACK respond and SEQ = client number +1 (previously created by A). A successful 
@@ -203,6 +203,7 @@ included but the link is somehow similar to the bank's.
 	 
 For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
 manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
+
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
 
 # Lec9
