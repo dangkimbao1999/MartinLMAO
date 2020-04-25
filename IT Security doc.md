@@ -138,12 +138,61 @@ Also javascript, ActiveX (Microsoft windows)
 ## Network security
 
    * **Depict potential threats when communicating over a network.**
+   
+   Depict potential threats when communicating over a network.
+Unauthorized third party can:
+	* Intercept the traffic between the sender and the receiver, gains access
+	to the info between the two
+	* Manipulate: whatever the sender is sending to the receiver, the communication
+	could be changed, altered
+	* Spoof: Impersonate the sender, the receiver cannot distinguish between the
+	sender and unauthorized third party
+	* Disruption: If you cannot hack it break it. The unauthorizeed third party can
+	disrupt communications.
+
 * **Explain why an attacker might manipulate routing in a network**
+
+attacks are especially simple when the attacker has access to one of the intermediate
+stations which relays the communication between the receiver and the receiver. Many of
+the attack are based on routing the routing the traffic over a station that is under control of
+the attacker.
+The structure of the internet makes it simple to do so.
 * **Explain the following attacks:**
      * **MAC Address Spoofing**
+	 
+	 MAC Spoofing: Not too diffucult to change MAC address. Certain app use
+the MAC for authentication purposes, like DHCP, WLAN use mac for restricting network access,...
      * **ARP Spoofing**
+	 
+	 
+ARP Spoofing: Address resolution protocol for translating IP to MAC such that within the same LAN
+segment packets can be routed. If such a translation is necessary, then the protocol will
+findout whether a MAC address will belong to an IP address. Since you don't want to this 
+all the time so you store it in the ARP cache. Attacker poison the ARP cache.
+B wants to send packets to C (192.168.5.19), A reply to B that the MAC address for 192.168.5.19 is A's MAC. If A
+makes sure that C is not listening and responding to B, B will store A's MAC address as the MAC for 192.168.5.19
+in its ARP cache. Later on all B packets intended for C will be send to A. Is a well-known attack.
+
+How to prevent: have a static arp cache or check regularly whether a machine's arp cache is the same as the others
+arp cache and is matching with their own IP. Machine can also do ARP queries on its own IP addresses and find out whether
+somebody else is alreadying responding to this.
      * **IP Spoofing**
+	 
+	 
+IP Spoofing: Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
+about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond
+  
      * **TCP Sequence Number Attack**
+	 
+	 TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
+SYN to server B, B then responds by sending a SYN ACK with sequence number = server to C.
+C for some reasons does not respond to B. A then guesses the server sequence number and +1 to it
+as ACK for the ACK respond and SEQ = client number +1 (previously created by A). A successful 
+connection is establish between A and B if A sucessfully guessed the sequence number. There were
+a vulnerability to guess a sequence number. 
+
+In the past there were trust relationships between machines (no cryptographic...). A could use this
+to add its IP to B's trust relationships, close the connection and uses the trusted relationship.
      * **Phishing**
      * **Pharming / DNS Spoofing**
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
