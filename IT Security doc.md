@@ -180,8 +180,7 @@ somebody else is alreadying responding to this.
 	 
 	 
 IP Spoofing: Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
-about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond
-  
+about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
      * **TCP Sequence Number Attack**
 	 
 	 TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
@@ -193,8 +192,17 @@ a vulnerability to guess a sequence number.
 
 In the past there were trust relationships between machines (no cryptographic...). A could use this
 to add its IP to B's trust relationships, close the connection and uses the trusted relationship.
+
      * **Phishing**
+	 
+Attacker run a service that looks like the bank's service (not the actual bank), someone who connect to this service, all entered credentials are 
+exposed to the attacker. Ways to lure the client to connect to the fake service. Two of them are phishing and pharming. For phishing the client will 
+receive an email, from seemingly the bank, but it is actually from the attacker. Within that email embedded is the link, but the dns name of the bank is not
+included but the link is somehow similar to the bank's. 
      * **Pharming / DNS Spoofing**
+	 
+For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
+manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
 
 # Lec9
