@@ -97,6 +97,7 @@
 		* Need to check the input does not overflow the expected input.
 		* Canaries, a random value b4 return address, which is also stored elsewhere. The value is later checked.
 * **Race conditions?**
+		![alt text](img/Racecondition.PNG "Logo Title Text 1")
 	* Many processes run in parallel on an OS (either in parallel or switching back and forth)
 	* Having multiple processes can interupt each other.
 	* Application A is running and needs to check for a property 
@@ -119,18 +120,11 @@
 # Lec8
 ## Network security
 
-   * **Depict potential threats when communicating over a network.**
-   
-Depict potential threats when communicating over a network.
-Unauthorized third party can:
-	* Intercept the traffic between the sender and the receiver, gains access
-	to the info between the two
-	* Manipulate: whatever the sender is sending to the receiver, the communication
-	could be changed, altered
-	* Spoof: Impersonate the sender, the receiver cannot distinguish between the
-	sender and unauthorized third party
-	* Disruption: If you cannot hack it break it. The unauthorizeed third party can
-	disrupt communications.
+* **Depict potential threats when communicating over a network.**
+	* Intercept the traffic between the sender and the receiver, gains access to the info between the two
+	* Manipulate: whatever the sender is sending to the receiver, the communication could be changed, altered
+	* Spoof: Impersonate the sender, the receiver cannot distinguish between the sender and unauthorized third party
+	* Disruption: If you cannot hack it break it. The unauthorizeed third party can disrupt communications.
 
 * **Explain why an attacker might manipulate routing in a network**
 
@@ -145,36 +139,37 @@ The structure of the internet makes it simple to do so.
 MAC Spoofing: Not too diffucult to change MAC address. Certain app use
 the MAC for authentication purposes, like DHCP, WLAN use mac for restricting network access,...
 
-     * **ARP Spoofing**
-	 
-ARP Spoofing: Address resolution protocol for translating IP to MAC such that within the same LAN
-segment packets can be routed. If such a translation is necessary, then the protocol will
-findout whether a MAC address will belong to an IP address. Since you don't want to this 
-all the time so you store it in the ARP cache. Attacker poison the ARP cache.
-B wants to send packets to C (192.168.5.19), A reply to B that the MAC address for 192.168.5.19 is A's MAC. If A
-makes sure that C is not listening and responding to B, B will store A's MAC address as the MAC for 192.168.5.19
-in its ARP cache. Later on all B packets intended for C will be send to A. Is a well-known attack.
+	* **ARP Spoofing**
+		![alt text](img/ARPspoofing.PNG "Logo Title Text 1")
+		* ARP Spoofing: Address resolution protocol for translating IP to MAC such that within the same LAN segment packets can be routed.
+		* If such a translation is necessary, then the protocol will findout whether a MAC address will belong to an IP address.
+		* Since you don't want to this all the time so you store it in the ARP cache.
+		* Attacker poison/manipulate the ARP cache to their advantage
+		* B wants to send packets to C (192.168.5.19)
+		* A reply to B that the MAC address for 192.168.5.19 is A's MAC.
+		* If A makes sure that C is not listening and responding to B, B will store A's MAC address as the MAC for 192.168.5.19 in its ARP cache.
+		* Later on all B packets intended for C will be send to A. 
+		* It is a well-known attack.
 
-How to prevent: have a static arp cache or check regularly whether a machine's arp cache is the same as the others
-arp cache and is matching with their own IP. Machine can also do ARP queries on its own IP addresses and find out whether
-somebody else is alreadying responding to this.
+		* How to prevent: 
+			* Have a static arp cache or check regularly whether a machine's arp cache is the same as the others arp cache and is matching with their own IP.
+			* Machine can also do ARP queries on its own IP addresses and find out whether somebody else is alreadying responding to this.
 
-     * **IP Spoofing**
-	 
+	* **IP Spoofing**
+		![alt text](img/IPspoofing.PNG "Logo Title Text 1")
+
 Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
 about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
 
-     * **TCP Sequence Number Attack**
-	 
-TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
-SYN to server B, B then responds by sending a SYN ACK with sequence number = server to C.
-C for some reasons does not respond to B. A then guesses the server sequence number and +1 to it
-as ACK for the ACK respond and SEQ = client number +1 (previously created by A). A successful 
-connection is establish between A and B if A sucessfully guessed the sequence number. There were
-a vulnerability to guess a sequence number. 
-
-In the past there were trust relationships between machines (no cryptographic...). A could use this
-to add its IP to B's trust relationships, close the connection and uses the trusted relationship.
+	* **TCP Sequence Number Attack**
+		![alt text](img/TCPsequenceattack.PNG "Logo Title Text 1")
+		* A impersonates C in a 3 way handshake. A (impersonating C) sends SYN to server B
+		* B then responds by sending a SYN ACK with sequence number = server to C.
+		* C for some reasons does not respond to B (Due to previous attack by A).
+		* A then guesses the server sequence number and +1 to it as ACK for the ACK respond and SEQ = client number +1 (previously created by A).
+		* A successful connection is establish between A and B if A sucessfully guessed the sequence number.
+		* There were a vulnerability to guess a sequence number. 
+		* In the past there were trust relationships between machines (no cryptographic...). A could use this to add its IP to B's trust relationships, close the connection and uses the trusted relationship.
 
      * **Phishing**
 	 
@@ -184,7 +179,7 @@ receive an email, from seemingly the bank, but it is actually from the attacker.
 included but the link is somehow similar to the bank's. 
 
      * **Pharming / DNS Spoofing**
-	 
+	 	![alt text](img/Pharming.PNG "Logo Title Text 1")
 For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
 manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
 
