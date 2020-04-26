@@ -179,17 +179,21 @@ The structure of the internet makes it simple to do so.
 
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
 	* Application layer security: The application programmer has to take care of all of the security needs of the application (CIA).
+		![alt text](img/Applicationlayersec.PNG "Logo Title Text 1")
 		* Advantages: Allow to use networks which are completely unsafe, independent of mechanisms of other layers, the protection is truly between the sender and the receiver (end to end).
 		* Disadavantages: Complexity of application increases, It is difficult to reuse components within the applications, each and every software may have its own mechanism in the worst case.
 		* Examples: Email encryption by the use of certificates, If the user would encrypt a file b4 the file is transmitted.
 	* Transport layer security: The unencrypted data is handed over from the application layer to the transport layer, the transport layer transmit the encrypted data is transmitted throug the network, and is decrypted again in the transport layer.
+		![alt text](img/Transportlayersec.PNG "Logo Title Text 1")
 		* Advantages: Allows transport layer does these things without application layer knowing it in some cases, mechanism which is implemented once can be use by as many applications that like to use it (good reusability)
 		* Disadvantages: Not end to end (In case there is/are a server/s that relays information in the middle), we cannot make sure that the whole transport is encrypted, also the data is unencrypted in the middle server.
 	* Network layer security: Secure communication between 2 intermidiate stations on the network layer between 2 routers or a router and an endpoint (not end to end), transparent to the above layers.
+		![alt text](img/Networklayersec.png "Logo Title Text 1")
 		* Advantages: High flexibility (possible to provide security on parts of the communication flow), transparency to the above layers (no changes to above layers to deploy these mechanisms).
 		* Disadvantages: Transparancy is also bad because it is impossible or very difficult to intentionally employ these mechanisms.
 		* Examples: Virtual network machine
 	* Data link layer security: Authentication, authorization and access control
+		![alt text](img/Datalinksec.PNG "Logo Title Text 1")
 		* Advantage: Allow to control which station are granted access to the Data link layer within the network
 		* Disadvantage: solely local protection
 		* Examples: Security in wireless LAN, ....
