@@ -134,11 +134,9 @@ the attack are based on routing the routing the traffic over a station that is u
 the attacker.
 The structure of the internet makes it simple to do so.
 * **Explain the following attacks:**
-     * **MAC Address Spoofing**
-	 
-MAC Spoofing: Not too diffucult to change MAC address. Certain app use
-the MAC for authentication purposes, like DHCP, WLAN use mac for restricting network access,...
-
+    * **MAC Address Spoofing**
+		MAC Spoofing: Not too diffucult to change MAC address. Certain app use
+		the MAC for authentication purposes, like DHCP, WLAN use mac for restricting network access,...
 	* **ARP Spoofing**
 		![alt text](img/ARPspoofing.PNG "Logo Title Text 1")
 		* ARP Spoofing: Address resolution protocol for translating IP to MAC such that within the same LAN segment packets can be routed.
@@ -171,17 +169,17 @@ about A. B is going to see traffic from C. = ddos attack. A wil not get much of 
 		* There were a vulnerability to guess a sequence number. 
 		* In the past there were trust relationships between machines (no cryptographic...). A could use this to add its IP to B's trust relationships, close the connection and uses the trusted relationship.
 
-     * **Phishing**
+    * **Phishing**
 	 
-Attacker run a service that looks like the bank's service (not the actual bank), someone who connect to this service, all entered credentials are 
-exposed to the attacker. Ways to lure the client to connect to the fake service. Two of them are phishing and pharming. For phishing the client will 
-receive an email, from seemingly the bank, but it is actually from the attacker. Within that email embedded is the link, but the dns name of the bank is not
-included but the link is somehow similar to the bank's. 
+		Attacker run a service that looks like the bank's service (not the actual bank), someone who connect to this service, all entered credentials are 
+		exposed to the attacker. Ways to lure the client to connect to the fake service. Two of them are phishing and pharming. For phishing the client will 
+		receive an email, from seemingly the bank, but it is actually from the attacker. Within that email embedded is the link, but the dns name of the bank is not
+		included but the link is somehow similar to the bank's. 
 
-     * **Pharming / DNS Spoofing**
+    * **Pharming / DNS Spoofing**
 	 	![alt text](img/Pharming.PNG "Logo Title Text 1")
-For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
-manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
+		For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
+		manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
 
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
 	* Application layer security: The application programmer has to take care of all of the security needs of the application (CIA).
