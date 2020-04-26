@@ -148,17 +148,13 @@ The structure of the internet makes it simple to do so.
 		* If A makes sure that C is not listening and responding to B, B will store A's MAC address as the MAC for 192.168.5.19 in its ARP cache.
 		* Later on all B packets intended for C will be send to A. 
 		* It is a well-known attack.
-
 		* How to prevent: 
 			* Have a static arp cache or check regularly whether a machine's arp cache is the same as the others arp cache and is matching with their own IP.
 			* Machine can also do ARP queries on its own IP addresses and find out whether somebody else is alreadying responding to this.
-
 	* **IP Spoofing**
 		![alt text](img/IPspoofing.PNG "Logo Title Text 1")
-
-Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
-about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
-
+		Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
+		about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
 	* **TCP Sequence Number Attack**
 		![alt text](img/TCPsequenceattack.PNG "Logo Title Text 1")
 		* A impersonates C in a 3 way handshake. A (impersonating C) sends SYN to server B
