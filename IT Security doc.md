@@ -200,13 +200,76 @@ The structure of the internet makes it simple to do so.
 # Lec9
 ## Firewalls
 
-   * **Firewalls ? Packet filter ? application level gateway ?demilitarized zone? tunnel**
+* **Firewalls:**
+	* Place on the position connecting the intranet to the internet and control the traffic between both network according to rules.
+	* According to these rules (AKA policies), the firewall distinguishes between allowed and unwanted traffic, and also filter out unwanted traffic.
+	* Not all issues are eliminated by the firewall:
+		* There might be insiders in the company.
+		* There are legitimate station in the intranet that have been compromised. e.g laptops that connect to the intranet and internet everyday that may have contracted malwares.
+		* Loopholes and security vulnerability still, that allow access directly the intranet circumventing the firewall for attackers from outside.
+		* Security due to design and implementation or insufficient policies.
+* **Packet filter:**
+	* Is a indispensible component of the firewall. Builtin to one network station of the networking layer (Router)
+	* Consists of rule chains, which consist of one or more rules and a default action.
+	* Rule specifies a feature a packet can or cannot have, if the packet matches the rule then a specified action is executed, if it does not match then it is compared to the feature of the next rule
+	* If there is no match, there is a specified default action which will be then executed.
+	* Default action could be discard the packet, forward the packet or jump to another rule chain.
+	* Packet filter let the network administrator design their own rule chains for particular tasks.
+	* The order of the rules is important
+	* Can filter by port number, IP source or destination, IP ranges, which interface that it came in (interfaces that it came in by internet or interfaces that it came in by intranet), transport protocol, flags, date and time,...
+	* Static and dynamic packet filtering:
+		* Static: only the packet is considered and solely dependent on the packet itself (AKA stateless)
+			* Vulnerability: Attacker could spoof a ACK packet and gain information, this can be solved using dynamic packet filters.
+		* Dynamic: information from previous packet might be taken into account (AKA stateful)
+	* Limitations: 
+		* No user specific or application specific filtering possible, they solely see the IP address
+		* The only way to identify applications protocols is to use transport layer information (source ports)
+		* Fragmentation can be come problematic, some information might not be present in the packet
+		* Applications with vary port numbers.
+		* Tunneling: some protocol allows for tunneling, some encapsulate information from one protocol to another protocol. With packet filters that take only header information as face value can lead to wrong conclusions.
+		* Encryption: once encryption happened, packet filter might have no clue what might actually be in the package
+* **application level gateway ?**
+	* Component of firewall
+	* Not look at packets but get the information on the application level and then filter based on this information
+	* AKA proxy for http, session border controller, voice over IP
+	* Connection between the station in the intranet and the server in the internet, this connection does not happen directly but instead through a intermidiate station which filters and controls the traffic on the application layer
+	* There are rules about what is allowed and not allowed
+	* The client send a request to the Application-Level-Gateway then forward the request to the server
+	* It can cache website, access control (blocking certain domains), content checking (malware,...), logging all activities, upload/download control.
+	* Advantage over packet filters: 
+		* User specific rules, could require user to login, after the login there can be roles and rights
+		* fine-grained control (communication peers, functions)
+		* Checking the content
+		* No direct connection between sender and receiver
+		* Logging
+	* Disadvantages:
+		* Very application specific, a ALG for http can only be used for http, also multiple ALGs for many apps
+		* Exposed for attack, because they are very visible to the outside
+* **demilitarized zone?**
+	![alt text](img/DMZ.png "Logo Title Text 1")
+	* Is a zone which is protected from the internet by a packet filter and also is also seperated from a protected internal network by another packet filter 
+	* The first packet filter offer fine-grained control what type of access from the internet to the servers accessible from the Internet
+	* The second packet filter offer fine grained control over what type of access is possible from the server accessible from the Internet to the internal network
+	* It makes sense to also seperate DMZ such that if one machine in the DMZ is compromised, no other machine in the zone is also compromised
 * **How packet filter works**
+	Answered above.
 * **Network Address Translation is and how it works.**
+	* Since private IP addresses cannot be routed in public networks
+	* When a packet come to C from A or B, the IP address of A or B is replaced by the public IP of C (N)
+	* Packet is then transfer to D or E, what they would see is the address N, and reply to N
+	* When the packet arrive at C as N, the packet is somehow determine whether the traffic is meant to be for A or for B and how to then replace the public address by A's or B's private address
+	* It is not enough to only translate IP addresses: there must also be a translation of port number
 * **inherent weaknesses and vulnerabilities in the concept Firewalls**
+	* Mobile devices do not remain in the premises of the company but they would gain access to the network. Outside of the protected network of the institution, these machine are not protected by the firewall, Especially in public network, ppl might setup to infect devices with malwares. These devices can be infected easily and can brought malware to the company.
+	* Tunnels and encryption: Are not only threats but can be useful.
+		* Tunneling and encapsulation: B and X offer tunneling service
+		![alt text](img/Tunneling.png "Logo Title Text 1")
+		* The administrator will have a hard time trying to allow stuff out of the firewall and not allowing anybody using tunneling
+		* The stuff being sent through the tunnel could be encrypted, the proxy have no chance of finding out what is in the tunnel
 * **Describe how a static packet filter distinguishes between incoming and outgoing TCP connections. Denote the corresponding rules in pseudo notation or verbally.**
+	Based on packets' flags, TCP for example, intranet does not take any SYN from the internet but only the other way around.
 * **Describe how a dynamic packet filter distinguishes between incoming and outgoing TCP-connections. Denote the corresponding rules in pseudo notation or verbally.**
-
+	Based on previous packets
 # Lec10
 ## Virtual Private Networks
 
