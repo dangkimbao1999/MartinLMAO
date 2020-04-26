@@ -254,6 +254,7 @@ The structure of the internet makes it simple to do so.
 * **How packet filter works**
 	Answered above.
 * **Network Address Translation is and how it works.**
+	![alt text](img/NAT.PNG "Logo Title Text 1")
 	* Since private IP addresses cannot be routed in public networks
 	* When a packet come to C from A or B, the IP address of A or B is replaced by the public IP of C (N)
 	* Packet is then transfer to D or E, what they would see is the address N, and reply to N
