@@ -87,8 +87,8 @@
 # Lec5
 ## Applications (this lecture dont have exercise)
    * **Buffer overflow?**
-	* Buffer overflow is a vulnerability within the system. with buffer overflow the attacker can inject his own code into the system and execute it. The attacker can gain administrative right to the machine. 
-	* Applications are executed from assembler code. These programs are not developed in assembler codes but c/c++,... and then are run to a compiler that translate them into assembly language. 
+	* Buffer overflow is a vulnerability within the system. with buffer overflow the attacker can inject his own code into the system and execute it. The attacker can gain administrative right to the machine.
+	* Applications are executed from assembler code. These programs are not developed in assembler codes but c/c++,... and then are run to a compiler that translate them into assembly language.
 	* Resources and memory are allocated for the program. For every function in a program, there is a data frame for the function (include data 4 the function and the address 4 the next function is stored. Because of Von Neumann arch, data and program code are held in the same memory = computer does not distinguish between data and program.
 	* Frame for variables are fixed in size, and the program expects inputs, incase the inputs are larger than the memory allocated 4 it, the program might not check for the input is within the boundary or not, which will overflow over to other cells.
 	* Results in a change in the return address (overwritten, manipulated) to the inputs and the attacker code gets injected.
