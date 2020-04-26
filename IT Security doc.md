@@ -246,7 +246,7 @@ The structure of the internet makes it simple to do so.
 		* Very application specific, a ALG for http can only be used for http, also multiple ALGs for many apps
 		* Exposed for attack, because they are very visible to the outside
 * **demilitarized zone?**
-	![alt text](img/DMZ.png "Logo Title Text 1")
+	![alt text](img/DMZ.PNG "Logo Title Text 1")
 	* Is a zone which is protected from the internet by a packet filter and also is also seperated from a protected internal network by another packet filter 
 	* The first packet filter offer fine-grained control what type of access from the internet to the servers accessible from the Internet
 	* The second packet filter offer fine grained control over what type of access is possible from the server accessible from the Internet to the internal network
@@ -263,7 +263,7 @@ The structure of the internet makes it simple to do so.
 	* Mobile devices do not remain in the premises of the company but they would gain access to the network. Outside of the protected network of the institution, these machine are not protected by the firewall, Especially in public network, ppl might setup to infect devices with malwares. These devices can be infected easily and can brought malware to the company.
 	* Tunnels and encryption: Are not only threats but can be useful.
 		* Tunneling and encapsulation: B and X offer tunneling service
-		![alt text](img/Tunneling.png "Logo Title Text 1")
+		![alt text](img/Tunneling.PNG "Logo Title Text 1")
 		* The administrator will have a hard time trying to allow stuff out of the firewall and not allowing anybody using tunneling
 		* The stuff being sent through the tunnel could be encrypted, the proxy have no chance of finding out what is in the tunnel
 * **Describe how a static packet filter distinguishes between incoming and outgoing TCP connections. Denote the corresponding rules in pseudo notation or verbally.**
