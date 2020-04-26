@@ -160,10 +160,10 @@ The structure of the internet makes it simple to do so.
 * **Explain the following attacks:**
      * **MAC Address Spoofing**
 	 
-	 MAC Spoofing: Not too diffucult to change MAC address. Certain app use
+MAC Spoofing: Not too diffucult to change MAC address. Certain app use
 the MAC for authentication purposes, like DHCP, WLAN use mac for restricting network access,...
+
      * **ARP Spoofing**
-	 
 	 
 ARP Spoofing: Address resolution protocol for translating IP to MAC such that within the same LAN
 segment packets can be routed. If such a translation is necessary, then the protocol will
@@ -176,11 +176,12 @@ in its ARP cache. Later on all B packets intended for C will be send to A. Is a 
 How to prevent: have a static arp cache or check regularly whether a machine's arp cache is the same as the others
 arp cache and is matching with their own IP. Machine can also do ARP queries on its own IP addresses and find out whether
 somebody else is alreadying responding to this.
+
      * **IP Spoofing**
 	 
-	 
-IP Spoofing: Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
+Impersonate an IP address. A impersonates B's IP and send a message to C, C then answers to B without knowing
 about A. B is going to see traffic from C. = ddos attack. A wil not get much of a respond.
+
      * **TCP Sequence Number Attack**
 	 
 TCP sequence number attack: A impersonates C in a 3 way handshake. A (impersonating C) sends 
@@ -199,13 +200,28 @@ Attacker run a service that looks like the bank's service (not the actual bank),
 exposed to the attacker. Ways to lure the client to connect to the fake service. Two of them are phishing and pharming. For phishing the client will 
 receive an email, from seemingly the bank, but it is actually from the attacker. Within that email embedded is the link, but the dns name of the bank is not
 included but the link is somehow similar to the bank's. 
+
      * **Pharming / DNS Spoofing**
 	 
 For pharming, the attacker manipulate/poison the dns service protocol. There are vulnerability of the system that can be misused by the attacker. The attacker can
 manipulate the dns server or the machine (but they rather do the machine). So the dns domain would lead the client to the attacker's IP website.
 
 * **Advantages and disadvantages of security mechanisms and protocols on all layers of the network reference model and compare them. Also, give examples for their use.**
-
+	* Application layer security: The application programmer has to take care of all of the security needs of the application (CIA).
+		* Advantages: Allow to use networks which are completely unsafe, independent of mechanisms of other layers, the protection is truly between the sender and the receiver (end to end).
+		* Disadavantages: Complexity of application increases, It is difficult to reuse components within the applications, each and every software may have its own mechanism in the worst case.
+		* Examples: Email encryption by the use of certificates, If the user would encrypt a file b4 the file is transmitted.
+	* Transport layer security: The unencrypted data is handed over from the application layer to the transport layer, the transport layer transmit the encrypted data is transmitted throug the network, and is decrypted again in the transport layer.
+		* Advantages: Allows transport layer does these things without application layer knowing it in some cases, mechanism which is implemented once can be use by as many applications that like to use it (good reusability)
+		* Disadvantages: Not end to end (In case there is/are a server/s that relays information in the middle), we cannot make sure that the whole transport is encrypted, also the data is unencrypted in the middle server.
+	* Network layer security: Secure communication between 2 intermidiate stations on the network layer between 2 routers or a router and an endpoint (not end to end), transparent to the above layers.
+		* Advantages: High flexibility (possible to provide security on parts of the communication flow), transparency to the above layers (no changes to above layers to deploy these mechanisms).
+		* Disadvantages: Transparancy is also bad because it is impossible or very difficult to intentionally employ these mechanisms.
+		* Examples: Virtual network machine
+	* Data link layer security: Authentication, authorization and access control
+		* Advantage: Allow to control which station are granted access to the Data link layer within the network
+		* Disadvantage: solely local protection
+		* Examples: Security in wireless LAN, ....
 # Lec9
 ## Firewalls
 
