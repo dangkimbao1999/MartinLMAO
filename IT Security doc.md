@@ -40,7 +40,8 @@
 ## Cryptography
 
    * **Model of a cryptographic system**
-      * ![image-20200403150608571](C:\Users\dangk\AppData\Roaming\Typora\typora-user-images\image-20200403150608571.png)
+         * slide
+      * ![image-20200403150608571](img\image-20200403150608571.png)
 * **Classical encryption methods?**
    * Substitution
    * Transposition
@@ -74,30 +75,50 @@
     * Authentication: something which validates or confirms the authenticity of something 
     * What you know (Password), What you have (Token), What you are (Biometry)
     * 2-Factor-authentication: provide multiple proof of your identification to get the permission to access.
+    
 * **Name and explain on which points the security of password-based authentication schemes depends.**
+
      * Size of password domain, choice of password and password policies
      * Security of strong passwords
      * Security when entering/transmitting passwords.
+
 * **How secure password should be chosen?(Not sure)**
-     * Binary keys with 128bit.
+
+     
+
 * **Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.**
+
      * 
+
 * **Describe the terms Token, Smart Card and Biometry and explain their use for authentication**
+
      * Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
      * Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
      * Biometry: physical properties of a person. To prove that you are really you.
+
 * **Describe Cryptographic Hash Functions**
+  
   * Compute characteristic pattern (“fingerprint”) of fixed length for each message. Mostly 128 or 256 bits. It should be impossible to find a message producing a given hash value, to find two messages with the same hash value. Widely used algorithms: MD5 and SHA
+  
 * **Describe how public key or symmetric cryptography can be used for authentication.**
-     * Symmetric key: ![image-20200424211818767](C:\Users\dangk\Desktop\image-20200424211818767.png)
-     * Public key: ![image-20200424211900083](C:\Users\dangk\Desktop\image-20200424211900083.png)
+
+     * Symmetric key: 
+     * ![image-20200424211818767](img\image-20200424211818767.png)
+     * slide
+     * Public key: ![image-20200424211900083](img\image-20200424211900083.png)
+
 * **Describe what a digital signature is and how it operates. Also describe how hash functions are used in digital signatures.**
+
      * A process that guarantees that the contents of a message haven't been altered in transit. Sender signs message with private key. Public key is used for validation
      * Hash function: transforming data of any size into a fixed size. Hash function will  generate unique digital fingerprint. Alice writes a message to Bob, A will hash the message, and then combines the hash value with her private key to generate a digital signature.
+
 * **Explain in detail format, composition and use of certificates. Also describe Certificate Authorities, Root-CA and Certificate revocation.**
+
      * 
      * 
+
 * **Discuss advantages and disadvantages of using cerfiticates and CAs.**
+
      * 
 
 # Lec4
