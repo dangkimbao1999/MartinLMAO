@@ -87,32 +87,22 @@
 # Lec5
 ## Applications (this lecture dont have exercise)
    * **Buffer overflow?**
-buffer overflow is a vulnerability within the system. with buffer overflow the attacker can
-inject his own code into the system and execute it. The attacker can gain administrative
-right to the machine. 
-Applications are executed from assembler code. These programs are not developed in 
-assembler codes but c/c++,... and then are run to a compiler that translate them into 
-assembly language. Resources and memory are allocated for the program. We jump
-into a function in that program, and there is a data frame for the function (include data 4 the function
-and the address 4 the next function is stored. Because of Von Neumann arch, data and
-program code are held in the same memory = computer does not distinguish between
-data and program. Frame for variables are fixed in size, and the program expects inputs,
-incase the inputs are larger than the memory allocated 4 it, the program might not check
-for the input is within the boundary or not, which will overflow over to other cells. Results
-in a change in the return address (overwritten, manipulated) to the inputs and the attacker
-code gets injected.
-Not very difficult to protect against bufferoverflow, need to check the input does not overflow
-the expected input. Also canaries, a random value b4 return address, which is also stored 
-elsewhere. The value is later checked.
+	* Buffer overflow is a vulnerability within the system. with buffer overflow the attacker can inject his own code into the system and execute it. The attacker can gain administrative right to the machine. 
+	* Applications are executed from assembler code. These programs are not developed in assembler codes but c/c++,... and then are run to a compiler that translate them into assembly language. 
+	* Resources and memory are allocated for the program. For every function in a program, there is a data frame for the function (include data 4 the function and the address 4 the next function is stored. Because of Von Neumann arch, data and program code are held in the same memory = computer does not distinguish between data and program.
+	* Frame for variables are fixed in size, and the program expects inputs, incase the inputs are larger than the memory allocated 4 it, the program might not check for the input is within the boundary or not, which will overflow over to other cells.
+	* Results in a change in the return address (overwritten, manipulated) to the inputs and the attacker code gets injected.
+	* Not very difficult to protect against bufferoverflow: 
+		* Need to check the input does not overflow the expected input.
+		* Canaries, a random value b4 return address, which is also stored elsewhere. The value is later checked.
 * **Race conditions?**
-Many processes run in parallel on an OS (either in parallel or switching back and forth)
-Having multiple processes can interupt each other. Application A is running and needs to
-check for a property, a parallel code of attacker is executed and interupt app A. Which changes
-the properties that A needed to check. When the execution of A continues, the properties is
-already manipulated. (Race condtions, TOC time of check, TOU time of use error)
-
-Can use semaphores or other atoma instructions for the machine for when executions are
-not interuptable.
+	* Many processes run in parallel on an OS (either in parallel or switching back and forth)
+	* Having multiple processes can interupt each other.
+	* Application A is running and needs to check for a property 
+	* A parallel code of attacker is executed and interupt app A. Which changes the properties that A needed to check.
+	* When the execution of A continues, the properties is already manipulated. 
+	* Also known as(Race condtions, TOC time of check, TOU time of use error)
+	* Can use semaphores or other atoma instructions for the machine for when executions are not interuptable.
 * **Active content?**
 
 
