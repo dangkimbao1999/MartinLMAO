@@ -87,6 +87,7 @@
 # Lec5
 ## Applications (this lecture dont have exercise)
 * **Buffer overflow?**
+	![alt text](img/Bufferoverflow.PNG "Logo Title Text 1")
 	* Buffer overflow is a vulnerability within the system. with buffer overflow the attacker can inject his own code into the system and execute it. The attacker can gain administrative right to the machine.
 	* Applications are executed from assembler code. These programs are not developed in assembler codes but c/c++,... and then are run to a compiler that translate them into assembly language.
 	* Resources and memory are allocated for the program. For every function in a program, there is a data frame for the function (include data 4 the function and the address 4 the next function is stored. Because of Von Neumann arch, data and program code are held in the same memory = computer does not distinguish between data and program.
@@ -104,25 +105,16 @@
 	* Also known as(Race condtions, TOC time of check, TOU time of use error)
 	* Can use semaphores or other atoma instructions for the machine for when executions are not interuptable.
 * **Active content?**
+	* Downloaded file can have malware or undesired functionality. 
+	* Can use cryptographic mechanisms to ensure safety (certificates). The program might still contains parts that the issuer is not awared about.
 
-
-Downloaded file can have malware or undesired functionality. Can use cryptographic mechanisms
-to ensure safety (certificates). The program might still contains parts that the issuer is not awared
-about.
-
-Active content: code that you download over the internet, but instead of installing but directly run it.
-e.g: javascript. 
-Java and java applets: Java is an interpreter language, it compile codes into java byte code.
-which is run in java virtual machine. Since virtual machine is an abstract interface, there are 
-libraries. The virtual machines can take on a lot of security functionalities and restrict what
-the byte code is allowed to do. That is particularly done 4 java applets, which are downloaded
-from the internet and executed on the local machine. Many think because of this applets are safe,
-no. There are signed and unsigned applets. Applets can have access to system files. Appplets are
-also not allowed to open network connections except for where it is downloaded from. Trusted applets
-are allowed to read and write in system files, but only if they are allowed. 
-Applets in the past have been compromised. But using applet is safer than running java directly.
-
-Also javascript, ActiveX (Microsoft windows)
+	* Active content: code that you download over the internet, but instead of installing but directly run it e.g: javascript. 
+	* Java and java applets: 
+		* Java is an interpreter language, it compile codes into java byte code. which is run in java virtual machine. Since virtual machine is an abstract interface, there are libraries. The virtual machines can take on a lot of security functionalities and restrict what the byte code is allowed to do.
+		* That is particularly done 4 java applets, which are downloaded from the internet and executed on the local machine.
+		* Many think because of this applets are safe, no. There are signed and unsigned applets. Applets can have access to system files. Appplets are also not allowed to open network connections except for where it is downloaded from. Trusted applets are allowed to read and write in system files, but only if they are allowed. 
+		* Applets in the past have been compromised. But using applet is safer than running java directly.
+	* Also javascript, ActiveX (Microsoft windows)
 ​    
 # Lec8
 ## Network security
