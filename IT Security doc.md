@@ -41,7 +41,7 @@
 
    * **Model of a cryptographic system**
          * slide
-      * ![image-20200403150608571](img\image-20200403150608571.png)
+      * ![image-20200403150608571](img/image-20200403150608571.png)
 * **Classical encryption methods?**
    * Substitution
    * Transposition
@@ -103,10 +103,9 @@
 * **Describe how public key or symmetric cryptography can be used for authentication.**
 
      * Symmetric key: 
-     * ![image-20200424211818767](img\image-20200424211818767.png)
-     * slide
-     * Public key: ![image-20200424211900083](img\image-20200424211900083.png)
-
+     * ![image-20200424211818767](img/image-20200424211818767.png)
+     * Public key: ![image-20200424211900083](img/image-20200424211900083.png)
+     
 * **Describe what a digital signature is and how it operates. Also describe how hash functions are used in digital signatures.**
 
      * A process that guarantees that the contents of a message haven't been altered in transit. Sender signs message with private key. Public key is used for validation
