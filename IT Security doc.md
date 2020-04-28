@@ -50,22 +50,49 @@
 * **Differences between public key and symmetric encryption schemes and their respective adv and disadvantage**
    * Symmetric encryption schemes: key is identical for both sender and receiver 
       * Advantage: 
+        * Faster
+        * Because the key is not transmitted with the data, so if the connection is intercepted, the data is safe
+        * Only the system which possesses the secret key can decrypt a message
       * Disadvantage:
+        * The secret key must be exchange before the message, and if the attacker can intercept the connection, then any message using that key to encrypt can be decrypted
+        * Cannot provide digital signatures that cannot be repudiate
    * Public key: different pair of key for every direction of communication
       * Advantage:
+        * There is no need to exchange the private key (which help the recipient to read the encrypted message) so if the connection is intercepted, the message is still safe
+        * Can provide digital signatures that can be repudiated
       * Disadvantage:
+        * Slower
 * **Term of Hybrid encryption scheme and its sequence thereof**
+   
    * It's like the mix of symmetric and public key schemes: say sender S want to send R a message, S will send R a public key, then R will use that key to create a session key, then R will use S's sent public key to encrypt another key and send back to S to join the created session key. And in that session, symmetric encryption is used **not sure**
 * **Term of "Mode of operation". Outline encrypt and decrypt for at least 2 different modes**
    * Mode of operation is  an algorithm used in conjunction with a block cipher that makes up the complete encryption algorithm
    * Used in CBC, CFM
 * **Conditions must be met to conduct brute force attack**
+  
   * Length of cipher must longer than key and key must be finite number of bit
 * **What is One time pad? and why it is unbreakable if the encryption key is unknow**
+  
   * Use randomness to generate key, and encrypt the message with that random key, so it is uniform distribution
 * **How Electronic Code Book (ECB) work. Its adv and disadvantage? When this method can be use **
+   * How it works: The user take the first block of plaintext and encrypts it with the key to produce the first block of ciphertext. Then takes the the second block and do the same process and so on
+   * ![](img/ecb.PNG)
+   * Advantage: Simple to implement, and can be processed in parallel.
    * Disadvantage: Blocks of plaintext go through the same encrypt processes, so the attacker might guess the plaintext if 1 plaintext is sent over and over again. The attacker can also mess up the block order => make the message incorrect
 * **How Cipher Block Chaining,Cipher Feedback Mode, Output Feedback Mode, Counter Mode work? **
+   * CBC: ![](img/cbc.PNG)
+   
+   * CFB:![](img/cfb.PNG)
+   
+     ![](img/cfb2.PNG)
+   
+   * OFB:![](img/ofb.PNG)
+   
+     ![](img/ofb2.PNG)
+   
+   * CM![](img/CM1.PNG)
+   
+   * ![](img/CM2.PNG)
 
 # Lec3
 ## Authentication
@@ -75,50 +102,45 @@
     * Authentication: something which validates or confirms the authenticity of something 
     * What you know (Password), What you have (Token), What you are (Biometry)
     * 2-Factor-authentication: provide multiple proof of your identification to get the permission to access.
-    
 * **Name and explain on which points the security of password-based authentication schemes depends.**
 
      * Size of password domain, choice of password and password policies
      * Security of strong passwords
      * Security when entering/transmitting passwords.
-
 * **How secure password should be chosen?(Not sure)**
-
-     
-
+* Long password, special character, capital letter, numbers, don't use natural language
 * **Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.**
-
-     * 
-
+* Sequence:![](img/password-based.PNG)
+     * Compare: 
 * **Describe the terms Token, Smart Card and Biometry and explain their use for authentication**
-
-     * Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
+* Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
      * Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
      * Biometry: physical properties of a person. To prove that you are really you.
-
 * **Describe Cryptographic Hash Functions**
   
   * Compute characteristic pattern (“fingerprint”) of fixed length for each message. Mostly 128 or 256 bits. It should be impossible to find a message producing a given hash value, to find two messages with the same hash value. Widely used algorithms: MD5 and SHA
-  
 * **Describe how public key or symmetric cryptography can be used for authentication.**
 
      * Symmetric key: 
      * ![image-20200424211818767](img/image-20200424211818767.png)
      * Public key: ![image-20200424211900083](img/image-20200424211900083.png)
-     
 * **Describe what a digital signature is and how it operates. Also describe how hash functions are used in digital signatures.**
 
      * A process that guarantees that the contents of a message haven't been altered in transit. Sender signs message with private key. Public key is used for validation
      * Hash function: transforming data of any size into a fixed size. Hash function will  generate unique digital fingerprint. Alice writes a message to Bob, A will hash the message, and then combines the hash value with her private key to generate a digital signature.
-
 * **Explain in detail format, composition and use of certificates. Also describe Certificate Authorities, Root-CA and Certificate revocation.**
 
-     * 
-     * 
-
+     * Format: Bundle of Information of the owner of public key, along with public key, signature of certificate authority (also info about CA).
+     * Certificate authority: take the certificate request which consist of  info of the entity (user, web server, ...) along with it's public key, and then it check that this public key is truly belong to that entity. Then CA will sign this certificate with it's private key (compute the hash, then encrypt the hash with private key)
+     * Certificate: say B, might not know A but B know its CA and B already had the public key of that CA, so B can check that whether the signature is ok or not. So if B trust this CA, then B can know the public key of A.
+     * Root-CA: CA sign its own certificate
+     * Certificate revocation: certificate that is no longer valid because that have been withdrawn
 * **Discuss advantages and disadvantages of using cerfiticates and CAs.**
-
-     * 
+* Advantage: Certificate is public, so anyone can have.
+     * Disadvantage: 
+       * Trustworthy only given if the root CA and other CA involved in the process are trustworthy
+       * CA is compromised and still issuing certificate which might not belong to valid institution
+       * Revocation is problematic because sometime this is not checked.
 
 # Lec4
 ## Operating System Security (this lesson exercise file hasn't covered all the topic in the lecture)
@@ -128,9 +150,9 @@
 * **Explain how the access control mechanisms implemented by an Operating System can be circumventde by an attacker and in which cases it can be enforced**
   * Use admin privilege to access to other individual's information in the organization
 * **Explain Linux's access control mechanism in detail**
-  * 
+  * Each file has permission specified for 3 specific type of user (see below)
 * **Explain each of the field in ls-l command's return**
-  * drwxr-xr-x 2 max staff 4096 Mar 27 12:15 test (split bởi dấu "-")
+  * drwxr-xr-x 2 max staff 4096 Mar 27 12:15 test 
 
   * d-: file type: directory (l for link)
   * first 3: permission for the owner
