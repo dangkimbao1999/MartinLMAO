@@ -63,7 +63,7 @@
       * Disadvantage:
         * Slower
 * **Term of Hybrid encryption scheme and its sequence thereof**
-   
+  
    * It's like the mix of symmetric and public key schemes: say sender S want to send R a message, S will send R a public key, then R will use that key to create a session key, then R will use S's sent public key to encrypt another key and send back to S to join the created session key. And in that session, symmetric encryption is used **not sure**
 * **Term of "Mode of operation". Outline encrypt and decrypt for at least 2 different modes**
    * Mode of operation is  an algorithm used in conjunction with a block cipher that makes up the complete encryption algorithm
@@ -220,12 +220,40 @@
 
 
 * **POP-Auth?**
+  * when you fetch a email, you will tell the server your username, the user keyword and the server will rep with the ok. then you will send out the pass phrase (secret) then the server will rep with another ok again, then you are logged in
 * **How emails work?**
+  * Sender first contact the sender's mail server by a protocol called smtp, then the sender's mail send to recipient's mail server also using smtp protocol, and the mail will be stored in this server. when the recipient want to read the email, the recipient will contact that mail server to get the mail by a protocol called POP/IMAP
 * **App layer encryption**
+  * before send out the email, convert it to ciphertext and then proceed the normal email sending procedure. When the email is arrived at the final destination and the other end, the email will then be decrypted
 * **SSH**
+  * The SSH protocol (also referred to as Secure Shell) is a method for secure remote login from one computer to another
+  * The protocol works in the client-server model, which means that the  connection is established by the SSH client connecting to the SSH  server. The SSH client drives the connection setup process and uses  public key cryptography to verify the identity of the SSH server. After  the setup phase the SSH protocol uses strong symmetric encryption and  hashing algorithms to ensure the privacy and integrity of the data that  is exchanged between the client and server.
+  * ![](img/How_does_the_SSH_protocol_work_.png)
 * **Local PFW**
+  * connection that transfer from SSH Client to SSH Server to the destination host/server 
+  * ![](img/loca_pfw.gif)
 * **Remote PFW**
+  * connection that transfer from SSH Server to SSH Client to the destination host/server 
+  * ![](img/remote_pfw.gif)
 * **TLS/SSL**
+  * [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) designed to provide [communications security](https://en.wikipedia.org/wiki/Communications_security) over a [computer network](https://en.wikipedia.org/wiki/Computer_network).
+  * Structure: ![](img/tls_ssl_structure.PNG)
+  * Lay between Application layer and Transport layer
+  * Consist of 2 smaller layer in TLS/SSL protocol: 
+    * First 3 protocol for negotiate of the encrypted connection, 4th one for transferring something.
+    * TLS Record Protocol: transferring record which are encrypted symmetrical cryptographical mechanism and using digital signature for ensuring integrity of respective record. Then this protocol will be then used by other specified protocol for transmission 
+  * How TLS/SSL is used: handshake protocol.
 * **Dynamic content**
+  * Content that constantly or regularly changes based on user interactions, timing and other parameters that determine what content is delivered to the user (like Facebook)
 * **Simple Anonymization**
+* **S/MIME**
+  *  A standard for [public key](https://en.wikipedia.org/wiki/Public_key) [encryption](https://en.wikipedia.org/wiki/Encryption) and [signing](https://en.wikipedia.org/wiki/Digital_signature) of [MIME](https://en.wikipedia.org/wiki/MIME) ( **MIME** is an [Internet standard](https://en.wikipedia.org/wiki/Internet_standard) that extends the format of [email](https://en.wikipedia.org/wiki/Email) messages to support text in [character sets](https://en.wikipedia.org/wiki/Character_set) other than [ASCII](https://en.wikipedia.org/wiki/ASCII), as well as attachments of audio, video, images, and application  programs.  Message bodies may consist of multiple parts, and header  information may be specified in non-ASCII character sets. Email messages with MIME formatting are typically transmitted with standard protocols, such as the  [Simple Mail Transfer Protocol](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) (SMTP), the [Post Office Protocol](https://en.wikipedia.org/wiki/Post_Office_Protocol) (POP), and the [Internet Message Access Protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) (IMAP).) data
+  * S/MIME provides the following cryptographic security services for electronic messaging applications:
+    - [Authentication](https://en.wikipedia.org/wiki/Authentication)
+    - Message integrity
+    - [Non-repudiation](https://en.wikipedia.org/wiki/Non-repudiation) of origin (using digital signatures)
+    - Privacy
+    - Data security (using encryption)
+* **PGP**
+  * **Pretty Good Privacy** (**PGP**) is an [encryption program](https://en.wikipedia.org/wiki/Encryption_software) that provides [cryptographic](https://en.wikipedia.org/wiki/Cryptographic) [privacy](https://en.wikipedia.org/wiki/Privacy) and [authentication](https://en.wikipedia.org/wiki/Authentication) for [data communication](https://en.wikipedia.org/wiki/Data_communication). PGP is used for [signing](https://en.wikipedia.org/wiki/Digital_signature), encrypting, and decrypting texts, [e-mails](https://en.wikipedia.org/wiki/Email), files, directories, and whole disk partitions and to increase the security of e-mail communications
 
