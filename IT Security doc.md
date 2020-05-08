@@ -63,8 +63,7 @@
       * Disadvantage:
         * Slower
 * **Term of Hybrid encryption scheme and its sequence thereof**
-  
-   * It's like the mix of symmetric and public key schemes: say sender S want to send R a message, S will send R a public key, then R will use that key to create a session key, then R will use S's sent public key to encrypt another key and send back to S to join the created session key. And in that session, symmetric encryption is used **not sure**
+  Hybrid encryption is achieved through data transfer using unique session keys along with symmetrical encryption. Public key encryption is implemented for random symmetric key encryption. The recipient then uses the public key encryption method to decrypt the symmetric key. Once the symmetric key is recovered, it is then used to decrypt the message.
 * **Term of "Mode of operation". Outline encrypt and decrypt for at least 2 different modes**
    * Mode of operation is  an algorithm used in conjunction with a block cipher that makes up the complete encryption algorithm
    * Used in CBC, CFM
