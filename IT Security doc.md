@@ -72,7 +72,8 @@
       * Disadvantage:
         * Slower
 * **Term of Hybrid encryption scheme and its sequence thereof**
-  Hybrid encryption is achieved through data transfer using unique session keys along with symmetrical encryption. Public key encryption is implemented for random symmetric key encryption. The recipient then uses the public key encryption method to decrypt the symmetric key. Once the symmetric key is recovered, it is then used to decrypt the message.
+  
+   * It's like the mix of symmetric and public key schemes: say sender S want to send R a message, S will send R a public key, then R will use that key to create a session key, then R will use S's sent public key to encrypt another key and send back to S to join the created session key. And in that session, symmetric encryption is used **not sure**
 * **Term of "Mode of operation". Outline encrypt and decrypt for at least 2 different modes**
    * Mode of operation is  an algorithm used in conjunction with a block cipher that makes up the complete encryption algorithm
    * Used in CBC, CFM
@@ -119,7 +120,7 @@
 * Long password, special character, capital letter, numbers, don't use natural language
 * **Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.**
 * Sequence:![](img/password-based.PNG)
-     * Compare: 
+     * Compare: Challenge-response authentication can defend against [session replay attacks](https://whatis.techtarget.com/definition/session-replay-script), in which an attacker listens to previous messages and resends them  later to get the same credentials as the original message.  Challenge-response systems defend against replay attacks, because each  challenge and response is unique. An attacker monitoring credentials  exchanges and then attempting to reuse credentials will not succeed in  gaining access.
 * **Describe the terms Token, Smart Card and Biometry and explain their use for authentication**
 * Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
      * Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
