@@ -273,13 +273,39 @@ The structure of the internet makes it simple to do so.
 	Based on previous packets
 # Lec10
 ## Virtual Private Networks
-
-   * **VPN? RAS? Site-to-site VPN?**
-   * **How IPSec works in detail. In your explanation, the terms AH, ESP, Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.**
-
-        * **Explain and describe how OpenVPN works in detail. In your explanation, the terms tun device and tap-device should be addressed.**
-    ## Lec13
-    # Network Applications (this lecture dont have file exercise)
+	There might be people who work outside the company but need access to the intranet. Back in the days, 
+	they used direct remote dial-up connection through a modem between a PC from outside the company. Which was
+	very costly and doesn't provide the right bandwidth. The usage of this have been reduced thanks to VPN.
+	
+	Another option is to allocate all the resources which are to be used from the outside, are not shielded by the firewall
+	but to put it on the internet. Basically move the server to the DMZ. Problem: If we have a lot of resources which need to be moved,
+	meaning a lot of authentication to be dealt with. If we want to check who gets access to our system, we would have to check the log file
+	of all the servers. With VPN, it's much easier to check who gets access.
+* **VPN? RAS? Site-to-site VPN?**
+	A virtual private network allows to run a secure seemingly direct point to point connection between two stations, similar to a direct line
+	between 2 stations. By using (potentially) an unsecured network such as the internet. Can be realized in software as well as hardwell. VPN is like
+	a lease private line between 2 stations, but actually a unsecured connection on the internet which emulates this.
+	
+	VPN does not have high availability, but there are means of ensuring the confidentiality and integrity of data. Because of this, private lines
+	are still needed to ensure availability.
+	
+	VPN can be done by means of tunnelling and encryption:
+		* The client R in the internet wants to connect to the server S to use the intranet's resources
+		* Client R has according IP address.
+		* The VPN (software on the machine) contacts the VPN server (server S), go through a handshake with authentication and negotiation of encryption credentials
+		* After having setup the encryption credentials, the server hands out VPN IP address z to the client R (address z belongs to the intranet), all the apps within R would then use the IP-address z to communicate
+		* Because R sits outside the intranet, the IP couldn't really be used, so the VPN software take the packet that was created from z to w (IP address of internal server) and encapsulate the packet (encrypt it and put in another packet) which would then be sent to the VPN server
+		* The server get the packet, decapsulate the packet and send it in the clear to w from IP address z
+		* The internal server is not awared of the VPN usage.
+		![alt text](img/VPN.PNG "Logo Title Text 1")
+	Site to site:
+		![alt text](img/SitetositeVPN.PNG "Logo Title Text 1")
+		* Remarks: R1 and R2 don't know whether there is a VPN or what happens in between, end to end encryption is recommend
+* **How IPSec works in detail. In your explanation, the terms AH, ESP, Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.**
+	
+* **Explain and describe how OpenVPN works in detail. In your explanation, the terms tun device and tap-device should be addressed.**
+## Lec13
+## Network Applications (this lecture dont have file exercise)
 
    * **How emails work?**
 * **POP-Auth?**
