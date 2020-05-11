@@ -80,7 +80,7 @@
    * Used in CBC, CFM
 * **Conditions must be met to conduct brute force attack**
   
-  * Length of cipher must longer than key and key must be finite number of bit
+  * Length of cipher must longer than key's cipher and key must be finite number of bit
 * **What is One time pad? and why it is unbreakable if the encryption key is unknow**
   
   * Use randomness to generate key, and encrypt the message with that random key, so it is uniform distribution
