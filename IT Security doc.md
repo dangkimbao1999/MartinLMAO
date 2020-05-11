@@ -49,7 +49,8 @@
 ## Cryptography
 
    * **Model of a cryptographic system**
-         * slide
+     
+       * slide
       * ![image-20200403150608571](img/image-20200403150608571.png)
 * **Classical encryption methods?**
    * Substitution
@@ -64,11 +65,11 @@
         * Only the system which possesses the secret key can decrypt a message
       * Disadvantage:
         * The secret key must be exchange before the message, and if the attacker can intercept the connection, then any message using that key to encrypt can be decrypted
-        * Cannot provide digital signatures that cannot be repudiate
+        * Cannot provide digital signatures that cannot be repudiated
    * Public key: different pair of key for every direction of communication
       * Advantage:
         * There is no need to exchange the private key (which help the recipient to read the encrypted message) so if the connection is intercepted, the message is still safe
-        * Can provide digital signatures that can be repudiated
+        * Can provide digital signatures that cannot be repudiated 
       * Disadvantage:
         * Slower
 * **Term of Hybrid encryption scheme and its sequence thereof**
@@ -117,12 +118,12 @@
      * Security of strong passwords
      * Security when entering/transmitting passwords.
 * **How secure password should be chosen?(Not sure)**
-* Long password, special character, capital letter, numbers, don't use natural language
+     * Long password, special character, capital letter, numbers, don't use natural language
 * **Describe the sequence in a password-based challenge-response authentication and compare its security with sending the password directly either encrypted or unencrypted.**
 * Sequence:![](img/password-based.PNG)
      * Compare: Challenge-response authentication can defend against [session replay attacks](https://whatis.techtarget.com/definition/session-replay-script), in which an attacker listens to previous messages and resends them  later to get the same credentials as the original message.  Challenge-response systems defend against replay attacks, because each  challenge and response is unique. An attacker monitoring credentials  exchanges and then attempting to reuse credentials will not succeed in  gaining access.
 * **Describe the terms Token, Smart Card and Biometry and explain their use for authentication**
-* Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
+     * Token: a device that show digits that are changed every minute, can be calculated on the token with some cryptographic embedded in the token which is not ez to extracted
      * Smart card: card that is auth by prove themselves to the card reader that they are really presented by means of cryptography
      * Biometry: physical properties of a person. To prove that you are really you.
 * **Describe Cryptographic Hash Functions**
@@ -145,7 +146,7 @@
      * Root-CA: CA sign its own certificate
      * Certificate revocation: certificate that is no longer valid because that have been withdrawn
 * **Discuss advantages and disadvantages of using cerfiticates and CAs.**
-* Advantage: Certificate is public, so anyone can have.
+     * Advantage: Certificate is public, so anyone can have.
      * Disadvantage: 
        * Trustworthy only given if the root CA and other CA involved in the process are trustworthy
        * CA is compromised and still issuing certificate which might not belong to valid institution
