@@ -302,7 +302,24 @@ The structure of the internet makes it simple to do so.
 		![alt text](img/SitetositeVPN.PNG "Logo Title Text 1")
 		* Remarks: R1 and R2 don't know whether there is a VPN or what happens in between, end to end encryption is recommend
 * **How IPSec works in detail. In your explanation, the terms AH, ESP, Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.**
-	
+	* The IP security (IPSec) is an Internet Engineering Task Force (IETF) standard suite of protocols between 2 communication points across the IP network that provide data authentication, integrity, and confidentiality. It also defines the encrypted, decrypted and authenticated packets
+	* Components of IP Security:
+		* Encapsulating Security Payload (ESP): It provides data integrity, encryption, authentication and anti replay. It also provides authentication for payload.
+		* Authentication Header (AH): It provides data integrity, authentication and anti replay and it does not provide encryption. The anti replay protection, protects against unauthorized transmission of packets. It does not protect data’s confidentiality.
+		2 above component offer no protection against relay attacks.
+		* Internet Key Exchange (IKE): Internet Key Exchange (IKE) provides message content protection and also an open frame for implementing standard algorithms such as SHA and MD5. The algorithm’s IP sec users produces a unique identifier for each packet. This identifier then allows a device to determine whether a packet has been correct or not. Packets which are not authorized are discarded and not given to receiver.
+	* Uses of IP Security:
+		* To encrypt application layer data.
+		* To provide security for routers sending routing data across the public internet.
+		* To provide authentication without encryption, like to authenticate that the data originates from a known sender.
+		* To protect network data by setting up circuits using IPsec tunneling in which all data is being sent between the two endpoints is encrypted, as with a Virtual Private Network(VPN) connection.
+	* How it works:
+		* The host checks if the packet should be transmitted using IPsec or not. These packet traffic triggers the security policy for themselves. This is done when the system sending the packet apply an appropriate encryption. The incoming packets are also checked by the host that they are encrypted properly or not.
+		* Then the IKE Phase 1 starts in which the 2 hosts( using IPsec ) authenticate themselves to each other to start a secure channel. It has 2 modes. The Main mode which provides the greater security and the Aggressive mode which enables the host to establish an IPsec circuit more quickly.
+		* The channel created in the last step is then used to securely negotiate the way the IP circuit will encrypt data accross the IP circuit.
+		* Now, the IKE Phase 2 is conducted over the secure channel in which the two hosts negotiate the type of cryptographic algorithms to use on the session and agreeing on secret keying material to be used with those algorithms.
+		* Then the data is exchanged across the newly created IPsec encrypted tunnel. These packets are encrypted and decrypted by the hosts using IPsec SAs.
+		* When the communication between the hosts is completed or the session times out then the IPsec tunnel is terminated by discarding the keys by both the hosts.
 * **Explain and describe how OpenVPN works in detail. In your explanation, the terms tun device and tap-device should be addressed.**
 ## Lec13
 ## Network Applications (this lecture dont have file exercise)
