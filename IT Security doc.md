@@ -282,14 +282,14 @@ The structure of the internet makes it simple to do so.
 	meaning a lot of authentication to be dealt with. If we want to check who gets access to our system, we would have to check the log file
 	of all the servers. With VPN, it's much easier to check who gets access.
 * **VPN? RAS? Site-to-site VPN?**
-	A virtual private network allows to run a secure seemingly direct point to point connection between two stations, similar to a direct line
+	* A virtual private network allows to run a secure seemingly direct point to point connection between two stations, similar to a direct line
 	between 2 stations. By using (potentially) an unsecured network such as the internet. Can be realized in software as well as hardwell. VPN is like
 	a lease private line between 2 stations, but actually a unsecured connection on the internet which emulates this.
 	
-	VPN does not have high availability, but there are means of ensuring the confidentiality and integrity of data. Because of this, private lines
-	are still needed to ensure availability.
+	* VPN does not have high availability, but there are means of ensuring the confidentiality and integrity of data. Because of this, private lines
+	* are still needed to ensure availability.
 	
-	VPN can be done by means of tunnelling and encryption:
+	* VPN can be done by means of tunnelling and encryption:
 		* The client R in the internet wants to connect to the server S to use the intranet's resources
 		* Client R has according IP address.
 		* The VPN (software on the machine) contacts the VPN server (server S), go through a handshake with authentication and negotiation of encryption credentials
@@ -298,7 +298,7 @@ The structure of the internet makes it simple to do so.
 		* The server get the packet, decapsulate the packet and send it in the clear to w from IP address z
 		* The internal server is not awared of the VPN usage.
 		![alt text](img/VPN.PNG "Logo Title Text 1")
-	Site to site:
+	* Site to site:
 		![alt text](img/SitetositeVPN.PNG "Logo Title Text 1")
 		* Remarks: R1 and R2 don't know whether there is a VPN or what happens in between, end to end encryption is recommend
 * **How IPSec works in detail. In your explanation, the terms AH, ESP, Tunnel Mode and Transport mode should be addressed. Also, describe what the Sequence Number in AH and ESP is used for.**
@@ -320,7 +320,17 @@ The structure of the internet makes it simple to do so.
 		* Now, the IKE Phase 2 is conducted over the secure channel in which the two hosts negotiate the type of cryptographic algorithms to use on the session and agreeing on secret keying material to be used with those algorithms.
 		* Then the data is exchanged across the newly created IPsec encrypted tunnel. These packets are encrypted and decrypted by the hosts using IPsec SAs.
 		* When the communication between the hosts is completed or the session times out then the IPsec tunnel is terminated by discarding the keys by both the hosts.
+	* Tunnel mode: If there is a security association between 2 stations in tunnel mode, then all packets which are being secured by the SA are being tunneled between the stations. Which means packets to be secured through the association will be encapsulated in another IP packet so there is a new IP header and being tunneled between the system. The IP source and destination are the IP of system which are being connected by the SA.
+	* Transport mode: IPsec support end to end encryption of packets. The IP header of the protected packets are not changed by IPSec but the payload either integrity protected or encrypted. Cannot be used for VPN
+	* Sequence number in AH and ESP is used for protection against replay attack, this number is incremented for each packets. When the maximum number is reached a new security association must be setup.
 * **Explain and describe how OpenVPN works in detail. In your explanation, the terms tun device and tap-device should be addressed.**
+	* OpenVPN works by creating virtual interfaces in user space under Linux
+	* Set up 2 virtual interfaces, which are point to point interfaces connecting 2 routers. This is how OpenVPN is displayed in the router.
+	* In fact there is no point to point connection, but it is encrypted and encapsulated and sent over the public interface by using SSL/TLS transport connection
+	* Can be run with TCP and UDP. UDP is likely the best possible choice for transporting because if a frame gets lost, we don't want to stall the whole process untill the frame is received again
+	* OpenVPN is very flexible and can transfer traffic either from the network layer as well as from the data link layer:
+		* If used on network layer, so called tun device comes in to play
+		* If used on data link layer, so called tap device is used
 ## Lec13
 ## Network Applications (this lecture dont have file exercise)
 
