@@ -297,6 +297,7 @@ The structure of the internet makes it simple to do so.
 		* Because R sits outside the intranet, the IP couldn't really be used, so the VPN software take the packet that was created from z to w (IP address of internal server) and encapsulate the packet (encrypt it and put in another packet) which would then be sent to the VPN server
 		* The server get the packet, decapsulate the packet and send it in the clear to w from IP address z
 		* The internal server is not awared of the VPN usage.
+		![alt text](img/VPN2.PNG "Logo Title Text 1")
 		![alt text](img/VPN.PNG "Logo Title Text 1")
 	* Site to site:
 		![alt text](img/SitetositeVPN.PNG "Logo Title Text 1")
