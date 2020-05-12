@@ -379,12 +379,16 @@ The structure of the internet makes it simple to do so.
 	meaning a lot of authentication to be dealt with. If we want to check who gets access to our system, we would have to check the log file
 	of all the servers. With VPN, it's much easier to check who gets access.
 * **VPN? RAS? Site-to-site VPN?**
+	![alt text](img/VPN.PNG "Logo Title Text 1")
+
 	* A virtual private network allows to run a secure seemingly direct point to point connection between two stations, similar to a direct line
 	between 2 stations. By using (potentially) an unsecured network such as the internet. Can be realized in software as well as hardwell. VPN is like
 	a lease private line between 2 stations, but actually a unsecured connection on the internet which emulates this.
 	
 	* VPN does not have high availability, but there are means of ensuring the confidentiality and integrity of data. Because of this, private lines
 	* are still needed to ensure availability.
+	
+	![alt text](img/VPN2.PNG "Logo Title Text 1")
 	
 	* VPN can be done by means of tunnelling and encryption:
 		* The client R in the internet wants to connect to the server S to use the intranet's resources
@@ -394,7 +398,6 @@ The structure of the internet makes it simple to do so.
 		* Because R sits outside the intranet, the IP couldn't really be used, so the VPN software take the packet that was created from z to w (IP address of internal server) and encapsulate the packet (encrypt it and put in another packet) which would then be sent to the VPN server
 		* The server get the packet, decapsulate the packet and send it in the clear to w from IP address z
 		* The internal server is not awared of the VPN usage.
-		![alt text](img/VPN.PNG "Logo Title Text 1")
 	* Site to site:
 		![alt text](img/SitetositeVPN.PNG "Logo Title Text 1")
 		* Remarks: R1 and R2 don't know whether there is a VPN or what happens in between, end to end encryption is recommend
