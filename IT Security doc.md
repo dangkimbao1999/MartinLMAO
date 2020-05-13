@@ -406,7 +406,6 @@ The structure of the internet makes it simple to do so.
 	* Components of IP Security:
 		* Encapsulating Security Payload (ESP): It provides data integrity, encryption, authentication and anti replay. It also provides authentication for payload.
 		* Authentication Header (AH): It provides data integrity, authentication and anti replay and it does not provide encryption. The anti replay protection, protects against unauthorized transmission of packets. It does not protect data’s confidentiality.
-		2 above component offer no protection against relay attacks.
 		* Internet Key Exchange (IKE): Internet Key Exchange (IKE) provides message content protection and also an open frame for implementing standard algorithms such as SHA and MD5. The algorithm’s IP sec users produces a unique identifier for each packet. This identifier then allows a device to determine whether a packet has been correct or not. Packets which are not authorized are discarded and not given to receiver.
 	* Uses of IP Security:
 		* To encrypt application layer data.
