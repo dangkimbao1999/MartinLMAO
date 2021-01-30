@@ -36,7 +36,7 @@
 - còn trong main sẽ đc fill theo heap
 
 ## File execute
-![](execute_file.png)
+![](img/execute_file.png)
 
 - Heap is used for global or extern variable, dynamic variable
 - Stack for local variable while calling function
