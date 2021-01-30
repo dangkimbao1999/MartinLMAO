@@ -35,6 +35,12 @@
 - khi tạo 1 function thì sẽ add các cái var trong function đó theo stack, theo thứ tự là function->para->return->base  pointer(ebp)->other reg->local var...
 - còn trong main sẽ đc fill theo heap
 
+## File execute
+![](execute_file.png)
+
+- Heap is used for global or extern variable, dynamic variable
+- Stack for local variable while calling function
+
 ## hack ?
 
 - Attacker controls what is written into buffer
@@ -43,8 +49,8 @@
 - return points to a callable memory location
 - application might crash afterwards
 - <img src="C:\Users\dangk\Desktop\DVWA\Function_call.png" style="zoom:67%;" />
-- 450 nop-sled (a sequence of [NOP](https://en.wikipedia.org/wiki/NOP_(code)) (no-operation) instructions meant to "slide" the CPU's instruction  execution flow to its final, desired destination whenever the program [branches](https://en.wikipedia.org/wiki/Branch_instruction) to a [memory address](https://en.wikipedia.org/wiki/Memory_address) anywhere on the slide.)
-- 33 shellcode
+- 450 nop-sled (a sequence of [NOP](https://en.wikipedia.org/wiki/NOP_(code)) (no-operation) instructions: is no-operation instruction, the attacker use nop-sled sequence to point to desirable memory address without knowing the exactly address. By pointing to randomly address which contains nop-sled sequence, it will slide through memory space until  desired destination whenever the program [branches](https://en.wikipedia.org/wiki/Branch_instruction) to a [memory address](https://en.wikipedia.org/wiki/Memory_address) anywhere on the slide.)
+- 33 byte shellcode: is a injection code to call the bash shell
 - 37 junk data
 - 4 new return address into nop-sled
 
