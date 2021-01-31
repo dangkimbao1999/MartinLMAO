@@ -123,20 +123,20 @@ what is nop-sled and how it is used
 - Task 2: define term:
   - Evolutionary algorithm:
   
-	The mechanisms that mimic the biological evolution with reproduction, mutation and recombination factor to find the stronger solution and eliminate the weakest solution
+	The mechanisms that mimic the biological evolution with reproduction, mutation and recombination factor to find the stronger solution and eliminate the weakest solution.
   - Local search:
   
-	The algorithm is to search from solution space by moving around to find the optimal cost or time bound is elapsed.
+	The algorithm is to search from solution space by moving around to find the optimal cost or time bound is elapsed. The definition of solution space, or neighbors, is defined by the user, usually related to the current optimal solution found with a few modification.
   - Vertex cover:
   
-	Is the set of vertex that can cover all the edge, which mean every edge can be one of directly edge of the node in vertex cover. The minimum vertex cover is the minimum vertex cover that we can create
+	Is the set of vertex that can cover all the edge, which mean every edge can be one of directly edge of the node in vertex cover. The minimum vertex cover problem goal  is to find the minimum set of vertices (minimum order) that can cover all edges in the graph.
 - Task 3: define term:
   - Companion Virus:
   
 	Is a companion virus is a computer virus that stores itself in file named similar to other program but with different extension. When user execute the program, it will run before the true program, hence the user is not recognized 
   - Rootkit:
   
-	Is the malware that design to give a root access while actively hiding its presence
+	Is the set of malwares that are designed to give a root access while actively hiding its presence.
   - Back door:
   
 	Refer to any method that anybody can able to get around a normal security measure and gain the root access to the system
