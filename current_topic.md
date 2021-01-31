@@ -54,9 +54,9 @@
 - 37 junk data
 - 4 new return address into nop-sled
 -  https://www.youtube.com/watch?v=1S0aBV-Waeo&t=537s (7:40)
-- ![](img\buffer_overflow.png)
+- ![](img/buffer_overflow.png)
 
-![](img\overflow.png)
+![](img/overflow.png)
 
 What is buffer overflow
 
