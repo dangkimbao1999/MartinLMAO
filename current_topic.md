@@ -126,7 +126,7 @@ what is nop-sled and how it is used
 	The mechanisms that mimic the biological evolution with reproduction, mutation and recombination factor to find the stronger solution and eliminate the weakest solution
   - Local search:
   
-	The algorithm is to search from solution space by moving around to find the optimal cost or time bound is elapsed
+	The algorithm is to search from solution space by moving around to find the optimal cost or time bound is elapsed.
   - Vertex cover:
   
 	Is the set of vertex that can cover all the edge, which mean every edge can be one of directly edge of the node in vertex cover. The minimum vertex cover is the minimum vertex cover that we can create
