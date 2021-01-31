@@ -42,12 +42,14 @@
 - return points to a callable memory location
 - application might crash afterwards
 - <img src="C:\Users\dangk\Desktop\DVWA\Function_call.png" style="zoom:67%;" />
-- 450 nop-sled (a sequence of [NOP](https://en.wikipedia.org/wiki/NOP_(code)) (no-operation) instructions meant to "slide" the CPU's instruction  execution flow to its final, desired destination whenever the program [branches](https://en.wikipedia.org/wiki/Branch_instruction) to a [memory address](https://en.wikipedia.org/wiki/Memory_address) anywhere on the slide.)
-- 33 shellcode
+- 450 nop-sled (a sequence of [NOP](https://en.wikipedia.org/wiki/NOP_(code)) (no-operation) instructions meant to "slide" the CPU's instruction  execution flow to its final, desired destination whenever the program [branches](https://en.wikipedia.org/wiki/Branch_instruction) to a [memory address](https://en.wikipedia.org/wiki/Memory_address) anywhere on the slide.) (just move to the next one)
+- 33 shellcode (malicious code)
 - 37 junk data
 - 4 new return address into nop-sled
+-  https://www.youtube.com/watch?v=1S0aBV-Waeo&t=537s (7:40)
+- ![](\img\buffer_overflow.png)
 
-![](C:\Users\dangk\Desktop\DVWA\overflow.png)
+![](img\overflow.png)
 
 What is buffer overflow
 
